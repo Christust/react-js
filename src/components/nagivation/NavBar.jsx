@@ -1,6 +1,10 @@
+import routerList from "../../contants/navigation/routerList";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function NavBarComponent() {
+  let location = useLocation();
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -21,26 +25,20 @@ function NavBarComponent() {
           </button>
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <Link className="nav-link active" to={""}>
-                  Inicio
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"contact"}>
-                  Contacto
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"api"}>
-                  API
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"faqs"}>
-                  About | FAQs
-                </Link>
-              </li>
+              {routerList.map((route) => {
+                return (
+                  <Link
+                    className={`nav-link ${
+                      location.pathname.slice(1) === route.pathname
+                        ? "active"
+                        : ""
+                    }`}
+                    to={route.pathname}
+                  >
+                    {route.label}
+                  </Link>
+                );
+              })}
             </ul>
           </div>
         </div>
