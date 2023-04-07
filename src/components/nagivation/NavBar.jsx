@@ -1,4 +1,4 @@
-import routerList from "../../contants/navigation/routerList";
+import routerList from "../../constants/navigation/routerList";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
