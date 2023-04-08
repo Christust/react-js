@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 
-// Boostrap
-import "bootstrap/dist/css/bootstrap.min.css";
+// Styles
+import "./styles/index.scss";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // React router imports:

@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import Loader from "./components/loader/Loader";
 import NavBarComponent from "./components/nagivation/NavBar";
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
       <div className="container mt-5">
         <Outlet />
       </div>
+      {/* TODO: Loader */}
+      {false && <Loader />}
     </div>
   );
 }
