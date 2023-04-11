@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import Paper from "@mui/material/Paper";
 
@@ -30,6 +30,11 @@ const HomePage = () => {
 
     series: [20, 20, 20, 20, 20],
   };
+  const [contador, setContador] = useState(0);
+
+  function addOne() {
+    setContador(contador + 1);
+  }
 
   return (
     <div className="row justify-content-center">
@@ -90,7 +95,50 @@ const HomePage = () => {
       <h2>Formularios</h2>
       <div className="d-flex justify-content-center">
         <Paper elevation={12} className="col-8 mb-5 p-3">
-          Hola
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">
+                Email address
+              </label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1">
+                Check me out
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Submit
+            </button>
+          </form>
+        </Paper>
+      </div>
+      <div className="d-flex justify-content-center">
+        <Paper elevation={12}>
+          {contador} <button onClick={() => addOne()}>Add 1</button>
         </Paper>
       </div>
     </div>
