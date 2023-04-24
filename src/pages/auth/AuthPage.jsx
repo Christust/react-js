@@ -3,7 +3,7 @@ import LoginForm from "../../components/forms/login/LoginForm";
 
 const AuthPage = () => {
   return (
-    <div>
+    <div className="fullHeight d-flex align-items-center justify-content-center">
       <LoginForm />
     </div>
   );

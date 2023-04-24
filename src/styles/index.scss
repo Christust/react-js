@@ -2,6 +2,13 @@
 
 @import "loader.scss";
 
+// LoginPage
+@import "auth/index.scss";
+
 body {
   background-color: whitesmoke;
+}
+
+.fullHeight {
+  min-height: 100vh;
 }

@@ -4,7 +4,7 @@ import NavBarComponent from "./components/nagivation/NavBar";
 
 function App() {
   return (
-    <div>
+    <div className="fullHeight">
       <NavBarComponent />
       <div className="container mt-5">
         <Outlet />
