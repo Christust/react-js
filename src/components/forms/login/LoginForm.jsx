@@ -38,7 +38,7 @@ const LoginForm = () => {
                 </div>
               )}
               <label className="form-label" htmlFor="password">
-                Password {errors.password} {touched.password ? "si" : "no"}
+                Password
               </label>
               <Field
                 className="form-control mb-3"
@@ -46,11 +46,15 @@ const LoginForm = () => {
                 type="password"
               ></Field>
               {errors.password && touched.password && (
-                <div className="invalid-feedback">
-                  La contraseña es requerida.
+                <div className="text-danger fw-light">
+                  <p>La contraseña es requerida.</p>
                 </div>
               )}
-              <button type="submit" className="btn btn-primary mb-3">
+              <button
+                disabled={errors}
+                type="submit"
+                className="btn btn-primary mb-3"
+              >
                 Enviar
               </button>
             </Form>
