@@ -25,7 +25,7 @@ const LoginForm = () => {
         onSubmit={(payload) => login(payload)}
       >
         {(props) => {
-          const { values, touched, errors } = props;
+          const { touched, errors, isValid } = props;
           return (
             <Form className="d-flex p-4 card shadow bg-body-tertiary rounded">
               <label className="form-label" htmlFor="username">
@@ -33,7 +33,7 @@ const LoginForm = () => {
               </label>
               <Field className="form-control mb-3" name="username"></Field>
               {errors.username && touched.username && (
-                <div className="invalid-feedback">
+                <div className="text-danger fw-light">
                   El nombre de usuario es requerido.
                 </div>
               )}
@@ -51,7 +51,7 @@ const LoginForm = () => {
                 </div>
               )}
               <button
-                disabled={errors}
+                disabled={!isValid}
                 type="submit"
                 className="btn btn-primary mb-3"
               >
